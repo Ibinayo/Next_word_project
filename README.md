@@ -5,6 +5,11 @@ The next word predictor is an ML project which makes use of sequence generation 
 ### How to start the application
 
 - Open the project folder in an editor(VS code, etc) or the command-line/terminal
+- Install the packages in the requirements.txt fie
+>`frankiw:~/Next_Word_Project$ pip install -r requirements.txt `<br>
+
+- The above code installs the packages in the requirements file necessary to run the project.
+
 - Confirm the project's content
 
 > `frankiw:~/Next_Word_Project$ ls`<br>
