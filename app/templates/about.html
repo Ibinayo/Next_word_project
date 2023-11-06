@@ -1,0 +1,34 @@
+{% extends 'base_index.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/about.css')}}">
+<div id="content_about">
+    <div>
+        <p>The Next Word Predictor software assists users in typing and composing 
+            content faster by predicting the next word in a sentence or phrase.
+        </p>
+    </div>
+    <div>
+        <p>
+            It utilizes machine learning models and NLP techniques to provide accurate 
+            and context-aware word predictions, aiming to enhance typing speed and overall user experience.
+        </p>
+    </div>
+    <div>
+        <p>
+            Next word predictors enhance user experiences in text-based interfaces by 
+            streamlining text input, improving communication, and reducing typing errors.
+        </p>
+    </div>
+    <div>
+        <p>
+            This is achieved by providing real-time, context-aware word suggestions
+             and personalized assistance.
+        </p>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/home.js')}}"></script>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

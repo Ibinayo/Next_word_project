@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Word Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base_index.css')}}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Black+Ops+One&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&family=Roboto+Mono:wght@200&display=swap');
+      </style>
+    
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            {% if sign_form %}
+            <div id="invi">&#9776;</div>
+            {% else %}
+            <div id="nav_menu">&#9776;</div>
+            {% endif %}
+            <div id="nav">
+                <div id="abbv">
+                    <span>N</span><span>w</span><span>P</span>
+                </div>
+                <div id="nav_ops">
+                    {% if sign_form %}
+                    {% else %}
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <!-- <li><a href="{{ url_for('contact') }}">Demo</a></li> -->
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <footer>
+       
+    </footer>
+    <script src="{{url_for('static', filename='js/home.js')}}"></script>
+</body>
+</html>

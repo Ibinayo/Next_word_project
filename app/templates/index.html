@@ -1,0 +1,94 @@
+{% extends 'base_index.html' %}
+
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Black+Ops+One&family=Cherry+Bomb+One&family=Iceberg&family=Josefin+Sans&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&family=Roboto+Mono:wght@200&display=swap');
+  </style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {% for message in messages %}
+        <p class="message">{{ message }}</li>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+{% if sign_form %}
+<div id="sign_div">
+    {% if sign_up %}
+    <form id="up" action="" method="POST" id="once" novalidate>
+        {{ sign_form.hidden_tag() }}
+        <div id="tit">
+            <p class="title">Sign Up</p>
+            <a id="close" href="{{url_for('index')}}">&times;</a>
+        </div>
+        <div id="name">
+            <p>{{sign_form.username.label}}</p>
+            <p>{{sign_form.username(class="input", size=41)}}</p>
+            {% for error in sign_form.username.errors %}
+            <p class="error">{{error}}</p>
+            {% endfor %}
+        </div>
+        <div id="email">
+            <p>{{sign_form.email.label}}</p>
+            <p>{{sign_form.email(class="input", size=41)}}</p>
+            {% for error in sign_form.email.errors %}
+            <p class="error">{{error}}</p>
+            {% endfor %}
+        <div id="password">
+            <p>{{sign_form.password.label}}</p>
+            <p>{{sign_form.password(class="input", size=41)}}</p>
+            {% for error in sign_form.password.errors %}
+            <p class="error">{{error}}</p>
+            {% endfor %}
+        </div>
+        <div id="submit">
+            <p>{{sign_form.sign_up(class="submit")}}</p>
+        </div>
+        <div id="statement">
+            <p>Have an account? <a href="{{ url_for('sign_in')}}">Sign in</a></p>
+        </div>
+    </form>
+    {% elif sign_in %}
+    <form action="" method="POST" id="sec" novalidate>
+        {{ sign_form.hidden_tag() }}
+        <div id="tit">
+            <p class="title">Sign In</p>
+            <a id="close" href="{{url_for('index')}}">&times;</a>
+        </div>
+        <div id="name">
+            <p>{{sign_form.username.label}}</p>
+            <p>{{sign_form.username(class="input", size=41)}}</p>
+            {% for error in sign_form.username.errors %}
+            <p class="error">{{error}}</p>
+            {% endfor %}
+        </div>
+        <div id="password">
+            <p>{{sign_form.password.label}}</p>
+            <p>{{sign_form.password(class="input", size=41)}}</p>
+            {% for error in sign_form.password.errors %}
+            <p class="error">{{error}}</p>
+            {% endfor %}
+        </div>
+        <div id="submit">
+            <p>{{sign_form.sign_in(class="submit")}}</p>
+        </div>
+        <div id="statement">
+            <p>Don't have an account? <a href="{{ url_for('sign_up')}}">Sign up</a></p>
+        </div>
+    </form>
+    {% endif %}
+
+</div>
+{% else %}
+<div id="content_div">
+    <p id="title"> Next Word Predictor</p>
+    <div id="bull_points">
+        <p>Your personalized assistant</p>
+    </div>
+    <div id="sign">
+        <a href="{{url_for('sign_in')}}">Sign in</a>
+        <a href="{{url_for('sign_up')}}">Sign up</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

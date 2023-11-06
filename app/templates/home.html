@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{username}}-Nwp/Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css')}}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Black+Ops+One&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&family=Roboto+Mono:wght@200&display=swap');
+      </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <div id="nav">
+                <p>Welcome, {{username}}!</p>
+                <p class="fa fa-user-circle-o" id="menu" aria-hidden="true"></p>
+            </div>
+            <div id="d_h">
+                <div id="drop">
+                    <div id="drop-content">
+                        <a href="{{ url_for('profile', username=username, act='edit')}}">Profile</a>
+                        <a href="{{ url_for('sign_out') }}">Sign out</a>
+                    </div>
+                </div>
+            </div>
+            <div id="text_box">
+                <div id="text">
+                    <p>Let's predict the next words</p>
+                    <textarea rows="2" cols="70" placeholder="Input something" class="input" id="input"> </textarea>
+                    <div id="opts">
+                       
+                    </div>
+                    <button id="clear">Clear the textarea</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='js/home.js')}}"></script>
+    
+</body>
+</html>

@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+}
+
+#content_div{
+    margin: 30px auto;
+    width: 95%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+#title{
+    color: white;
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-family: 'Josefin Sans';
+}
+
+#sign{
+    padding: 30px;
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#sign a{
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#sign a:first-child{
+    border: 0.5px solid rgba(255, 255, 255, 0.205);
+}
+
+#sign a:nth-child(2){
+    background-color: rgb(75, 53, 85);
+    border: 0.5px solid rgba(255, 255, 255, 0.205);
+}
+
+#sign a:hover{
+    border: 2px solid rgba(255, 255, 255, 0.205);
+}
+
+
+#bull_points p{
+    color: rgba(255, 255, 255, 0.4); 
+    font-family: 'Roboto Mono';  
+}
+
+/* Sign up style */
+
+#sign_div{
+    width: 400px;
+    height: fit-content;
+    background-color: none;
+    align-self: center;
+    margin: 20px 0px;
+    border: 0.5px solid rgba(255, 255, 255, 0.205);
+    box-shadow: 0px 1px 17px 2px inset rgba(116, 43, 158, 0.27);
+    padding: 20px;
+    max-height: 400px;
+
+}
+
+
+form #tit{
+    display: flex;
+    justify-content: space-between;
+}
+
+#tit a{
+    font-size: 20px;
+}
+
+form div:not(#tit){
+    margin: 10px 5px;
+}
+
+form div p{
+    padding: 3px 0px;
+}
+
+#submit{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+form div p:first-child{
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Roboto Mono';
+}
+
+#up #password{
+    margin-left: 0px;
+}
+
+.input{
+    height: 30px;
+    background-color: rgb(20, 19, 19);
+    color: white;
+    font-family: 'Roboto Mono';
+    padding: 5px 7px;
+}
+
+.input:focus{
+    outline: none;
+}
+
+#tit .title{
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Roboto Mono';
+}
+
+#statement a{
+    color: rgba(163, 91, 145, 0.6)
+}
+
+#statement a:hover{
+    font-size: larger;
+}
+
+.submit{
+    width: 200px;
+    padding: 7px 0px;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+    border: none;
+}
+
+.submit:hover{
+    padding: 7px 0px;
+    border: 0.5px solid silver;
+}
+
+.error{
+    color: red;
+    font-size: 10px;
+    font-family: 'Roboto Mono';
+    padding: 3px;
+}
+
+
+/* flashed messages */
+.message{
+    width: 100%;
+    text-align: center;
+    color:rgba(255, 255, 255, 0.6);
+    font-family: 'Roboto Mono';
+    font-size: 12px;
+}
+
+
+
+
+/* styles for tabetsd and mobiles */;
+/* styles for tablet devices */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+   
+  }
+  
+  /* styles for mobile devices */
+  @media only screen and (max-width: 767px) {
+
+    #title{
+        font-size: 30px;
+    }
+    
+   #sign_div{
+    width: 95%;
+
+   }
+
+   .title{
+         font-size: 25px;
+         margin-bottom: 15px;
+   }
+
+   form div p{
+    padding: 5px 0px;
+   }
+   .input{
+       width: 100%;
+   }
+
+   form div p:first-child{
+    font-size: 13px;
+   }
+
+   .message{
+    padding-bottom: 3px;
+   }
+
+   #content_div{
+    margin: -20px auto;
+   }
+
+  }

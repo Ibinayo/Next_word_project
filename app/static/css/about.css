@@ -1,0 +1,101 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+#content_about{
+    margin: 30px auto;
+    width: 95%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+} 
+
+
+#content_about div{
+    display: none;
+    font-size: 12px;
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 1px 17px 2px inset rgba(116, 43, 158, 0.27);
+    padding: 10px 20px;
+    width: 700px;
+    color: rgba(255, 255, 255, 0.4);
+    align-items: center;
+    height: 55px;
+    background-color: rgb(20, 19, 19);
+    /* color: white; */
+    font-family: 'Roboto Mono';
+  
+    overflow: hidden;
+}
+
+#content_about div:hover{
+    box-shadow: 0px 0px 19px 10px rgba(0,0,0,0.1);
+    font-size: 15px;
+    color: white;
+    height: 70px;
+}
+
+
+
+@keyframes slideInFromLeft {
+    0% {
+        width: 0px;
+        /* transform: translateX(-10%); */
+    }
+    100% {
+        width: 700px;
+        /* transform: translateX(0); */
+    }   
+}
+
+
+/* styles for tabetsd and mobiles */;
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    body{
+            height: auto!important;
+           
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 920px){
+    #content_about{
+        
+        height: 85%;
+    }
+    #content_about div{
+        width: 100%;
+        height: 90px;
+        font-size: 10px;
+    }
+
+    #content_about div:hover{
+        font-size: 12px;
+        height: 120px;
+        z-index: 999;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    #content_about{
+        
+        height: 90%;
+    }
+    #content_about div{
+        width: 100%;
+        height: 90px;
+        font-size: 10px;
+    }
+
+    #content_about div:hover{
+        font-size: 12px;
+        height: 120px;
+        z-index: 999;
+    }
+
+    
+
+    
+}

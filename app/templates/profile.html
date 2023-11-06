@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{username}}- NwP/Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css')}}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Black+Ops+One&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&family=Roboto+Mono:wght@200&display=swap');
+      </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <div id="nav">
+                <a id="back" href="{{url_for('home', username=username)}}">&#8592;</a>
+                <p>{{username}}!</p>
+            </div>
+            <div id="details">
+                <form action="" method="POST" novalidate>
+                    {{form.hidden_tag()}}
+                    <select class="title" id="select">
+                        {% if act == 'edit' %}
+                            <option value="edit" default>Edit User Details</option>
+                            <option value="change">Change Password</option>
+                            <option value="delete">Delete Account</option>
+                            {% elif act == 'change' %}
+                            <option value="change" default>Change Password</option>
+                            <option value="edit">Edit User Details</option>
+                            <option value="delete">Delete Account</option>
+                            {% else %}
+                            <option value="delete" default>Delete Account</option>
+                            <option value="edit">Edit User Details</option>
+                            <option value="change">Change Password</option>
+                        {% endif %}
+                    </select>
+                       {% if act == 'edit' %}
+                    <div id="username">
+                        <p>{{form.username.label}}</p>
+                        <p>{{form.username(class='input', size=50, value=current_user.username)}}</p>
+                        {% for error in form.username.errors %}
+                            <p class="error">{{error}}</p>
+                        {% endfor %}
+                    </div>
+                    <div id="email">
+                        <p>{{form.email.label}}</p>
+                        <p>{{form.email(class='input', size=50, value=current_user.email)}}</p>
+                        {% for error in form.email.errors %}
+                            <p class="error">{{error}}</p>
+                        {% endfor %}
+                    </div>
+                    <div id="submit">
+                        <p>{{form.edit(class='submit')}}</p>
+                    </div>
+                    {% elif act == 'change' %}
+                    <div id="old">
+                        <p>{{form.old_password.label}}</p>
+                        <p>{{form.old_password(class='input', size=50, value=current_user.username)}}</p>
+                        {% for error in form.old_password.errors %}
+                            <p class="error">{{error}}</p>
+                        {% endfor %}
+                    </div>
+                    <div id="new">
+                        <p>{{form.new_password.label}}</p>
+                        <p>{{form.new_password(class='input', size=50, value=current_user.username)}}</p>
+                        {% for error in form.new_password.errors %}
+                            <p class="error">{{error}}</p>
+                        {% endfor %}
+                    </div>
+                    <div id="submit">
+                        <p>{{form.edit(class='submit')}}</p>
+                    </div>
+                    {% else %}
+                    <div >
+                        <p style="margin-bottom: 10px;">Are you sure you want to delete your account?</p>
+                    </div>
+                    <div id="password">
+                        <p>{{form.password.label}}</p>
+                        <p>{{form.password(class='input', size=50, value=current_user.username)}}</p>
+                        {% for error in form.password.errors %}
+                            <p class="error">{{error}}</p>
+                        {% endfor %}
+                    </div>
+                    <div id="submit">
+                        <p>{{form.delete(class='submit')}}</p>
+                    </div>
+
+                    {% endif %}
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='js/home.js')}}"></script>
+    
+</body>
+</html>

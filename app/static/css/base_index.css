@@ -1,0 +1,232 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+a{
+    font-family: 'Roboto Mono';
+    font-weight: bolder;
+}
+a:active, a:visited, a:link{
+    text-decoration: none;
+    color: #4b376e;
+}
+
+a:hover{
+    color: white;
+}
+
+#container{ 
+    width: 100%;
+    height: 100vh; 
+    /* background: linear-gradient(270deg, rgb(64, 56, 219) 0%, rgba(87,88,161,1) 35%, rgb(187, 65, 211) 100%); */
+    /* background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(87,88,161,1) 35%, rgba(44,34,46,1) 100%); */
+    animation: animateBg 14s linear infinite;
+    /* background-image: linear-gradient(100deg,#101b47,#434379,#0d0853,#0f1424,#101b47,#0e0e11);  */
+    background-image: linear-gradient(130deg,#212022,#38303b,#0f0f0f,#594e5c,#42445c,#212022,#38303b);
+    background-size: 500% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animated-gradient {
+    
+  }
+  @keyframes animateBg {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+  }
+  
+
+#content {
+    border: 2px solid silver;
+    border-radius: 30px;
+    width: 80%;
+    height: 80vh;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 1px 17px 20px rgba(116, 43, 158, 0.27);
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+#nav div{
+    margin: 0px 20px;
+}
+
+#nav_ops ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+#nav_ops ul li{
+    margin: 15px 0px 0px 0px;
+}
+#nav_ops ul li a{  
+    padding: 15px 40px;
+}
+
+#nav_ops ul li a:hover{ 
+    border-bottom: 1px solid whitesmoke;
+}
+
+#abbv{
+  
+}
+#abbv span{
+    font-family: 'Black Ops One';
+    color: #56417a;
+}
+
+#abbv span:first-child, #abbv span:nth-child(3){
+    font-size: 50px;
+}
+#abbv span:nth-child(2){
+    font-size: 40px;
+}
+
+
+
+/* styles for tabetsd and mobiles */;
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    body{
+            height: auto!important;
+           
+    }
+}
+
+
+@media only screen and (max-width: 767px){
+    body{
+        height: auto!important;
+        
+    }
+    #container{
+        min-width: 300px;
+        width: 100%;
+        min-height:630px;
+    }
+    #content{
+        min-width: 300px;
+        height: 600px;
+        margin: auto;
+        width: 90%;
+    }
+
+    #nav div{
+        width: 50%;
+    }
+
+    #nav_menu, #invi{
+        display: block;
+        align-self: flex-end;
+        width: fit-content;
+        color: rgba(255, 255, 255, 0.4);
+        padding-bottom: 5px;
+        font-family: 'Reboto Mono';
+        padding-right: 20px;
+        cursor: pointer;
+        font-size: 30px;
+        
+    } 
+
+    #nav{
+        height: 85px;
+    }
+
+    #invi{
+        color: transparent;
+    }
+
+    #nav div{
+        margin: 0px 10px;
+    }
+    #nav_ops{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+  
+    #nav_ops ul {
+        position: relative;
+        left: 40px;
+        width: fit-content;
+        display: none;
+        flex-direction: column;
+        list-style: none;
+    }
+
+    #nav_ops ul li{
+        margin: 0px;
+        font-size: 10px;
+        border: 0.5px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0px 1px 17px 2px inset rgba(116, 43, 158, 0.27);
+        padding: 6px 4px;
+        color: rgba(255, 255, 255, 0.4)
+    }
+
+    #nav_ops ul li a:hover{ 
+        border-bottom: none;
+    }
+    
+    #abbv{
+        position: relative;
+        bottom: 38px;
+    }
+    #abbv span:first-child, #abbv span:nth-child(3){
+        font-size: 30px;
+    }
+    #abbv span:nth-child(2){
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    #content{
+        min-width: 1000px;
+    }
+    #container{
+        min-width: 1000px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #nav_menu, #invi{
+        display: none;
+    }  
+
+    #nav_ops ul{
+        display: flex;
+    }
+
+   
+}
+
+
+
+/*scrollbar*/
+::-webkit-scrollbar{
+    width: 4px;
+  }
+  
+::-webkit-scrollbar-thumb{
+background: #110526;
+border-radius: 10px;
+}
+::-webkit-scrollbar-button{
+display: block;
+}
+
+::-webkit-scrollbar-track{
+background-color: silver;
+}
+
+
+
