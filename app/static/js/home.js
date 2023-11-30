@@ -150,7 +150,7 @@ async function loadOptions (value, num, url) {
 async function predictWord (value) {
   removeOptions();
   const url = 'http://127.0.0.1:5000/predict';
-  const options = await loadOptions(value, 5, url);
+  const options = await loadOptions(value, 7, url);
   options.forEach((element) => {
     addOptions(element);
   });
