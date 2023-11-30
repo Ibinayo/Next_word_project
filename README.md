@@ -5,14 +5,27 @@ The next word predictor is an ML project which makes use of sequence generation 
 ### How to start the application
 
 - Open the project folder in an editor(VS code, etc) or the command-line/terminal
+
+-If you don't have a python enviroment, we create one. If you don't use 'python3', you can use 'python'. If you have, skip this step.
+
+> `frankiw:¬/Next_Word_Project$ python3 -m venv env`
+
+-This will create an *env* folder in your directory. 
+
+> `frankiw:¬/Next_Word_Project$ source env/bin/activate`
+
+This will activate the python environment
+
+`(env) frankiw:¬/Next_Word_Project$ `
+
 - Install the packages in the requirements.txt fie
->`frankiw:~/Next_Word_Project$ pip install -r requirements.txt `<br>
+>`(env) frankiw:~/Next_Word_Project$ pip install -r requirements.txt `<br>
 
 - The above code installs the packages in the requirements file necessary to run the project.
 
 - Confirm the project's content
 
-> `frankiw:~/Next_Word_Project$ ls`<br>
+> `(env) frankiw:~/Next_Word_Project$ ls`<br>
 >*app*<br>
 *config.py*<br>
 *nwp.py*<br>
@@ -22,7 +35,8 @@ The next word predictor is an ML project which makes use of sequence generation 
 
 
 - If *instance* and *migrationsis not present in the project's file, we'll need to run some commands to initialise the database. 
-> `frankiw:~/Next_Word_Project$ flask db init`<br>
+- If they are, please skip the next three steps
+> `(env) frankiw:~/Next_Word_Project$ flask db init`<br>
 
 This command will output some information that will have a similar format to this:
 
@@ -36,7 +50,7 @@ This command will output some information that will have a similar format to thi
 
 Then we run:
 
-> `frankiw:~/Next_Word_Project$ flask db migrate`<br>
+> `(env) frankiw:~/Next_Word_Project$ flask db migrate`<br>
 
 This command will output some information that will have a similar format to this:
 
@@ -49,7 +63,7 @@ INFO  [alembic.autogenerate.compare] Detected added index 'ix_user_username' on 
 
   Then: 
 
-> `frankiw:~/Next_Word_Project$ flask db upgrade`<br>
+> `(env) frankiw:~/Next_Word_Project$ flask db upgrade`<br>
 
 This command will output some information that will have a similar format to this:
 
@@ -61,7 +75,8 @@ INFO  [alembic.runtime.migration] Running upgrade  -> 5da739186931, empty messag
 
 - Then we run our application.
 
-> `frankiw:~/Next_Word_Project$ python3 -m nwp`<br>
+> `(env) frankiw:~/Next_Word_Project$ python3 -m nwp`<br>
+ > some text.....
  > *Serving Flask app 'app'*<br>
  *Debug mode: on*<br>
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.*<br>
@@ -76,3 +91,9 @@ Press CTRL+C to quit
 - You can also go the browser and input in the http link if preferred.
 
 - Note: Internet connection is needed for the proper functioning of the application
+
+## Please read
+
+`It should be noted that this model is made to function on user previous input, but predictions will still be made.`
+`To save your user input, click the 'Clear the textarea' button.`
+`If any error is given, please, retake the steps`
