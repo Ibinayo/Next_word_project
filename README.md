@@ -75,3 +75,4 @@ Press CTRL+C to quit
 
 - You can also go the browser and input in the http link if preferred.
 
+- Note: Internet connection is needed for the proper functioning of the application
