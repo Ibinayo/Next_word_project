@@ -80,7 +80,7 @@ INFO  [alembic.runtime.migration] Running upgrade  -> 5da739186931, empty messag
  > *Serving Flask app 'app'*<br>
  *Debug mode: on*<br>
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.*<br>
- *Running on http://127.0.0.1:5050*<br>
+ *Running on http://127.0.0.1:5000*<br>
 Press CTRL+C to quit
  *Restarting with stat*<br>
  *Debugger is active!*<br>
